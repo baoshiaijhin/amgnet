@@ -93,7 +93,7 @@ class EncodeProcessDecode(nn.Module):
                                    message_passing_aggregator=self._message_passing_aggregator,
                                    min_meshnodes=self.min_nodes,
                                    stochastic_message_passing_used=False)
-        self.post_processor=self.makemlp(self._latent_size)                           
+        self.post_processor=self._make_mlp(self._latent_size)                           
         self.decoder = Decoder(make_mlp=functools.partial(self._make_mlp, layer_norm=False),
                                output_size=self._output_size)
 
